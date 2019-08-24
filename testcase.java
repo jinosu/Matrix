@@ -29,7 +29,7 @@ File file = new File(path);
 FileWriter writer;
 try {
 writer = new FileWriter(file, true);  //True = Append to file, false = Overwrite
-writer.write(String.valueOf(size)+" "+String.valueOf(maxnumber));
+writer.write(String.valueOf(size)+" "+String.valueOf(maxnumber)+"\n");
 for (String[] stringf : str) {
     String line = "";
         for (String strings : stringf) {
