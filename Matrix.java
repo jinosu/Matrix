@@ -65,7 +65,9 @@ public class Matrix {
        return number[0][0]*number[1][1]-number[1][0]*number[0][1];  
        else
         for (int i = 0; i < number.length; i++) {
+            if(number[i][0]!=0)
           count += c*number[i][0]*Minor(number, i, 0);
+          c*=-1;
        }
        return count;
     }
