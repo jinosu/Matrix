@@ -54,7 +54,6 @@ public class Matrix {
        if(number.length==2){ //ใช่เช็คว่าเมตริกที่รับเข้ามามีขนาดเหลือ 2x2 หรือยังซึ่งเป็นขนาดที่ใช้ในการหา det ได้
            count = number[0][0]*number[1][1]-number[1][0]*number[0][1];
         big = big.add(new BigInteger(String.valueOf(count)));    
-           System.out.println(number[0][0]*number[1][1]-number[1][0]*number[0][1]);
        return big;} //ส่งค่า det ขนาด 2x2 
        else                 //หากขนาดยังเหลือมากว่า 2x2 ให้ทำการหาโคเฟเตอร์
         for (int i = 0; i < number.length; i++) {
