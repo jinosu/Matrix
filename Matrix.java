@@ -53,13 +53,14 @@ public class Matrix {
        int count = 0; //ตัวแปรใช้สำหรับการเก็บค่าของ det        
        if(number.length==2){ //ใช่เช็คว่าเมตริกที่รับเข้ามามีขนาดเหลือ 2x2 หรือยังซึ่งเป็นขนาดที่ใช้ในการหา det ได้
            count = number[0][0]*number[1][1]-number[1][0]*number[0][1];
-        big = big.add(new BigInteger(String.valueOf(count)));    
-       return big;} //ส่งค่า det ขนาด 2x2 
-       else                 //หากขนาดยังเหลือมากว่า 2x2 ให้ทำการหาโคเฟเตอร์
+        big = big.add(new BigInteger(String.valueOf(count)));               //เก็บค่าของ det ของเมตริกขนาด 2x2   
+           System.out.println(number[0][0]*number[1][1]-number[1][0]*number[0][1]);
+       return big;}                                                           //ส่งค่า det ขนาด 2x2 
+       else                                                                      //หากขนาดยังเหลือมากว่า 2x2 ให้ทำการหาโคเฟเตอร์
         for (int i = 0; i < number.length; i++) {
             if(number[i][0]!=0){                       //ลดขั้นตอนการคำนวนโดยการจะไม่ทำการคำนวนหาโคแฟคเตอร์มีค่าเท่ากับ 0                    
                 count =c*number[i][0];                 //ค่าของโคเฟเตอร์จะเป็นตัวแรกของหลักแล้วไล่ลำดับตามแถวไปเรื่อยจนถึงตัวสุดท้ายเช่นถ้าเป็นขนาด 3x3 จะมีโคเฟเตอร์ 3 ตัวหลังจากนั้ทำการเรียกไปที่เมธอต Minor เพื่อทำการตัดขนาดแล้วส่งค่าของ Minor กลับมาคูณกับโคเฟเตอร์ 
-           big = big.add(new BigInteger(String.valueOf(count)).multiply(Minor(number, i, 0)));                 
+           big = big.add(new BigInteger(String.valueOf(count)).multiply(Minor(number, i, 0))); //ทำการเก็บค่าของตัวเลขใน BigInteger โดยการใช้เมธอต add ในการใส่ค่าโคแฟคเตอร์ตามด้วยการคูณกับไมเนอร์โดยใช้เมธอต เราสามาร๔เรียกเมธอตต่อกันได้เพราะเมธอตที่เรียกใช้มีการ return เป็นคลาส์                 
             }
             c*=-1;
         }
